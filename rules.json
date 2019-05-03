@@ -1,0 +1,73 @@
+{
+    "redirect": {
+        "CNAME": [
+            [".*(yjs|yunjiasu)-cdn\\.(com|net)"]
+        ],
+        "联盟广告": [
+            ["^https?://.*(cpro|pos|hm|dup)\\.baidu(static)?\\.com"],
+            ["^https?://.*epro\\.sogou\\.com"],
+            ["^https?://.*union\\.360\\.cn"],
+            ["^https?://.*mediav\\.com"],
+            ["^https?://.*(gma|strip).alicdn.com"],
+            ["^https?://.*sina\\.net"],
+            ["^https?://.*360buyimg\\.com"],
+            ["^https?://(imgsreview|pcsoftwords).dftoutiao.com"],
+            ["^https?://adservice\\.google\\.com"],
+            ["^https?://changyan\\.sohu\\.com"]
+        ],
+        "heroku": [
+            ["^https?://(dashboard\\.heroku\\.com)/assets/.+", "heroku.oss-cn-hongkong.aliyuncs.com"]
+        ],
+        "gitlab": [
+            ["^https?://(assets\\.gitlab-static\\.net).*", "gitlab-assets.oss-cn-hongkong.aliyuncs.com"],
+            ["^https?://(about\\.gitlab\\.com).*", "gitlab.com/users/sign_in"]
+        ],
+        "github": [
+            ["^https?://(github\\.com)/(?:.+/){2}(?:archive|raw|releases/download)/.+", "github-download.oss-cn-hongkong.aliyuncs.com"],
+            ["^https?://(github\\.githubassets\\.com).*", "github-assets.oss-cn-hongkong.aliyuncs.com"]
+        ],
+        "google": [
+            ["^https?://(ajax\\.googleapis\\.com).*", "ajax.proxy.ustclug.org"],
+            ["^https?://(themes\\.googleusercontent\\.com).*", "themes.loli.net"],
+            ["^https?://(www\\.google\\.com/recaptcha).*", "recaptcha.net/recaptcha"]
+        ],
+        "野猪撸广告": [
+            ["^https?://.*\\.(sinaimg|gemgsx|9118)\\.(cn|com)"]
+        ],
+        "菜鸟教程广告": [
+            ["^https?://.*doubleclick\\.net"],
+            ["^https?://.*googlesyndication\\.com"],
+            ["^https?://.*googletagmanager\\.com"]
+        ],
+        "小游戏网站": [
+            ["^https?://(www\\.(?:4399|4399j|18183|37|6822|7k7k|2144|u77|17yy|7724|2345|17173)\\.(?:com|cn|cc).*)", "news.baidu.com"],
+            ["^https?://(game\\.hao123\\.com.*)", "news.baidu.com"],
+            ["^https?://(xiaoyouxi\\.360\\.cn.*)", "news.baidu.com"]
+        ],
+        "网站统计": [
+            ["^https?://.*\\.cnzz\\.com"],
+            ["^https?://www\\.google-analytics\\.com"]
+        ]
+    },
+    "injection": {
+        "css": [
+            ["^https?://mail\\.163\\.com", ".nui-closeable,.insert-top-menu-wechat,.undefined {display: none;}"]
+        ],
+        "script": [
+            ["^https?://.*\\.baidu\\.com", "$(\".ec_wise_ad,.tab_news,.habody\").empty()"]
+        ]
+    },
+    "optimize": {
+        "headers": [
+            "*://*.gitlab.com/*",
+            "*://*.github.com/*",
+            "*://recaptcha.net/*"
+        ],
+        "document": [
+            "*://*.github.com/*"
+        ],
+        "https": [
+            "*://*.runoob.com/*"
+        ]
+    }
+}
